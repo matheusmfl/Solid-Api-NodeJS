@@ -1,13 +1,21 @@
 import { Request, Response, Router } from 'express'
+import { randomUUID } from 'node:crypto'
 
 const categoriesRoutes = Router()
 
 const categories = []
 
-categoriesRoutes.post('/categories', (req: Request, res: Response) => {
+categoriesRoutes.post('/', (req: Request, res: Response) => {
   const { name, description } = req.body
 
-  categories.push({ name, description })
+  const id = randomUUID()
+  const category = {
+    name,
+    description,
+    id,
+  }
+
+  categories.push(category)
 
   return res.status(201).send()
 })
