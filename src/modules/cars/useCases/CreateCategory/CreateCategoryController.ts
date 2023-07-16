@@ -2,9 +2,8 @@ import { Request, Response } from 'express'
 import { CreateCategoryUseCase } from './CreateCategoryUseCase'
 
 export class CreateCategoryController {
-  private createCategoryUseCase: CreateCategoryUseCase
-  constructor(createCategoryUseCase: CreateCategoryUseCase) {
-    this.createCategoryUseCase = createCategoryUseCase
+
+  constructor(private createCategoryUseCase: CreateCategoryUseCase) {
   }
 
   handle(req: Request, res: Response): Response {

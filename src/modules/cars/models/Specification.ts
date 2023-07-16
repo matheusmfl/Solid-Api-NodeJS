@@ -2,9 +2,9 @@ import { randomUUID } from 'node:crypto'
 
 export class Specification {
   id?: string
-  name: string
-  description: string
-  created_at: Date
+  name: string | undefined
+  description: string | undefined
+  created_at: Date | undefined
 
   constructor() {
     if (!this.id) {

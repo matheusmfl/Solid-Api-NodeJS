@@ -1,6 +1,6 @@
 import { SpecificationRepository } from '../repositories/SpecificationRepository'
 
-interface Irequest {
+interface IRequest {
   name: string
   description: string
 }
@@ -10,7 +10,7 @@ export class CreateSpecificationService {
     this.specificationRepository = specificationRepository
   }
 
-  execute({ name, description }: Irequest): void {
+  execute({ name, description }: IRequest): void {
     const specificationAlreadyExists =
       this.specificationRepository.findByName(name)
 
