@@ -1,22 +1,13 @@
 import { Request, Response, Router } from 'express'
-import { randomUUID } from 'node:crypto'
+import { CategoriesReposity } from '../repositories/CategoriesRepository'
 
 const categoriesRoutes = Router()
-
-const categories = []
+const categoriesReposity = new CategoriesReposity()
 
 categoriesRoutes.post('/', (req: Request, res: Response) => {
   const { name, description } = req.body
 
-  const id = randomUUID()
-  const category = {
-    name,
-    description,
-    id,
-  }
-
-  categories.push(category)
-
+  categoriesReposity.create({ name, description })
   return res.status(201).send()
 })
 
