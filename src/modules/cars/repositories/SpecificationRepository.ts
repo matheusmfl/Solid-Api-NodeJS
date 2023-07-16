@@ -1,5 +1,3 @@
-
-
 import { Specification } from '../models/Specification'
 import { ICreateSpecificationDTO, ISpecificationRepository } from './implementations/ISpecificationRepository'
 
