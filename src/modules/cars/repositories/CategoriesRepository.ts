@@ -1,4 +1,5 @@
 import { Category } from '../models/Category'
+import { Specification } from '../models/Specification'
 import {
   ICategoryRepository,
   ICreateCategoryDTO,
@@ -25,7 +26,7 @@ export class CategoriesRepository implements ICategoryRepository {
     return this.categories
   }
 
-  findByName(name: string) {
+  findByName(name: string): Specification | undefined {
     const category = this.categories.find((category) => category.name === name)
 
     return category
