@@ -20,4 +20,8 @@ export class CategoriesReposity {
     })
     this.categories.push(category)
   }
+
+  list(): Category[] {
+    return this.categories
+  }
 }

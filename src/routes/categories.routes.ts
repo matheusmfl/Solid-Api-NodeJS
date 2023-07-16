@@ -11,4 +11,10 @@ categoriesRoutes.post('/', (req: Request, res: Response) => {
   return res.status(201).send()
 })
 
+categoriesRoutes.get('/', (req: Request, res: Response) => {
+  const allCategories = categoriesReposity.list()
+
+  return res.status(200).json(allCategories)
+})
+
 export { categoriesRoutes }
